@@ -23,8 +23,7 @@ const Footer = () => {
       'jio': '/images/jio.png',
       'tata power': '/images/tata-power.png',
       'adani': '/images/Adani_2012_logo.png',
-      'airtel': '/images/Bharti_Airtel-Logo.wine.png',
-      'hindustan unilever': '/images/HINDUNILVR.NS_BIG-24495890.png'
+      'airtel': '/images/Bharti_Airtel-Logo.wine.png'
     };
 
     const match = Object.entries(logoMap).find(([key]) => name.includes(key.toLowerCase()));

@@ -246,8 +246,6 @@ void main() {
           return;
         }
         
-        // Calculate delta time for smooth animation
-        const deltaTime = t - lastTime;
         lastTime = t;
         // Update time uniform, using delta time for more consistent animation
         uniforms.iTime.value = t * 0.001;
