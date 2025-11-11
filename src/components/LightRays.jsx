@@ -240,13 +240,10 @@ void main() {
         uniforms.rayDir.value = dir;
       };
 
-      let lastTime = 0;
       const loop = t => {
         if (!rendererRef.current || !uniformsRef.current || !meshRef.current) {
           return;
         }
-        
-        lastTime = t;
         // Update time uniform, using delta time for more consistent animation
         uniforms.iTime.value = t * 0.001;
         if (followMouse && mouseInfluence > 0.0) {
