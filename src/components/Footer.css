@@ -1,0 +1,131 @@
+.footer {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+  border-top: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.footer h3 {
+  text-align: center;
+  color: #334155;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 2rem;
+  padding: 0;
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.logo-scroll-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  margin: 2rem 0;
+}
+
+.logo-scroll {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.logo-scroll:hover {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  padding: 0 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+}
+
+.company-logo {
+  max-width: 100%;
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s ease;
+}
+
+.logo-item:hover .company-logo {
+  filter: grayscale(0) opacity(1);
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-scroll {
+    animation-duration: 30s;
+  }
+  
+  .logo-item {
+    min-width: 120px;
+    padding: 0 1rem;
+  }
+  
+  .company-logo {
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+  
+  .footer h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .logo-scroll {
+    animation-duration: 25s;
+  }
+  
+  .logo-item {
+    min-width: 100px;
+    padding: 0 0.75rem;
+  }
+  
+  .company-logo {
+    height: 24px;
+  }
+}

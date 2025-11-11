@@ -1,0 +1,165 @@
+[
+  {
+    "id": 1,
+    "name": "Tata Consultancy Services (TCS)",
+    "location": "Mumbai, India",
+    "industry": "Technology",
+    "website": "https://www.tcs.com",
+    "logo": "/images/Tata_Consultancy_Services_old_logo.png",
+    "description": "Global IT services and consulting company, part of Tata Group."
+  },
+  {
+    "id": 2,
+    "name": "Infosys",
+    "location": "Bengaluru, India",
+    "industry": "Technology",
+    "website": "https://www.infosys.com",
+    "logo": "/images/Infosys_logo.png",
+    "description": "Multinational IT services and consulting firm."
+  },
+  {
+    "id": 3,
+    "name": "Wipro",
+    "location": "Bengaluru, India",
+    "industry": "Technology",
+    "website": "https://www.wipro.com",
+    "logo": "/images/Wipro_new_logo.png",
+    "description": "Global information technology, consulting and business process services."
+  },
+  {
+    "id": 4,
+    "name": "Tata Motors",
+    "location": "Mumbai, India",
+    "industry": "Automotive",
+    "website": "https://www.tatamotors.com",
+    "logo": "/images/tata-motors.png",
+    "description": "Multinational automotive manufacturer, part of Tata Group."
+  },
+  {
+    "id": 5,
+    "name": "Mahindra & Mahindra",
+    "location": "Mumbai, India",
+    "industry": "Automotive",
+    "website": "https://www.mahindra.com",
+    "logo": "/images/mahindra-logo.webp",
+    "description": "Global automotive and farm equipment manufacturer."
+  },
+  {
+    "id": 6,
+    "name": "Bajaj Auto",
+    "location": "Pune, India",
+    "industry": "Automotive",
+    "website": "https://www.bajajauto.com",
+    "logo": "/images/bajaj-logo.png",
+    "description": "Leading manufacturer of two- and three-wheelers with global presence."
+  },
+  {
+    "id": 7,
+    "name": "Bharti Airtel",
+    "location": "New Delhi, India",
+    "industry": "Telecommunications",
+    "website": "https://www.airtel.in",
+    "logo": "/images/Bharti_Airtel-Logo.wine.png",
+    "description": "Multinational telecommunications services company."
+  },
+  {
+    "id": 8,
+    "name": "Reliance Jio",
+    "location": "Mumbai, India",
+    "industry": "Telecommunications",
+    "website": "https://www.jio.com",
+    "logo": "/images/jio.png",
+    "description": "Telecom and digital services arm of Reliance Industries."
+  },
+  {
+    "id": 9,
+    "name": "Vodafone Idea",
+    "location": "Mumbai, India",
+    "industry": "Telecommunications",
+    "website": "https://www.myvi.in",
+    "logo": "/images/Vodafone_Idea_logo.png",
+    "description": "Indian telecom operator formed by merger of Vodafone India and Idea."
+  },
+  {
+    "id": 10,
+    "name": "Reliance Industries",
+    "location": "Mumbai, India",
+    "industry": "Energy",
+    "website": "https://www.ril.com",
+    "logo": "/images/Reliance_Industries.png",
+    "description": "Diversified conglomerate with energy, retail and telecom businesses."
+  },
+  {
+    "id": 11,
+    "name": "Adani Group",
+    "location": "Ahmedabad, India",
+    "industry": "Energy",
+    "website": "https://www.adani.com",
+    "logo": "/images/Adani_2012_logo.png",
+    "description": "Multinational conglomerate with interests in energy and infrastructure."
+  },
+  {
+    "id": 12,
+    "name": "Tata Power",
+    "location": "Mumbai, India",
+    "industry": "Energy",
+    "website": "https://www.tatapower.com",
+    "logo": "/images/Tata_Power_logo.png",
+    "description": "Largest integrated power company in India, part of Tata Group."
+  },
+  {
+    "id": 13,
+    "name": "Hindustan Unilever",
+    "location": "Mumbai, India",
+    "industry": "Consumer",
+    "website": "https://www.hul.co.in",
+    "logo": "/images/HINDUNILVR.NS_BIG-24495890.png",
+    "description": "FMCG leader with multinational brands across categories."
+  },
+  {
+    "id": 14,
+    "name": "ITC Limited",
+    "location": "Kolkata, India",
+    "industry": "Consumer",
+    "website": "https://www.itcportal.com",
+    "logo": "/images/ITC_Limited-Logo.wine.svg",
+    "description": "Diversified consumer goods company with hotels, agri and paper."
+  },
+  {
+    "id": 15,
+    "name": "Marico",
+    "location": "Mumbai, India",
+    "industry": "Consumer",
+    "website": "https://www.marico.com",
+    "logo": "/images/Marico.png",
+    "description": "Consumer goods company with presence across Asia and Africa."
+  },
+  {
+    "id": 16,
+    "name": "Microsoft",
+    "location": "Hyderabad, India",
+    "industry": "Technology",
+    "website": "https://www.microsoft.com",
+    "logo": "/images/Microsoft_logo_(2012).png",
+    "description": "One of Microsoft's largest campuses outside the US, focusing on core engineering, Azure, Office, and AI."
+  },
+  {
+    "id": 17,
+    "name": "Amazon",
+    "location": "Hyderabad, India",
+    "industry": "E-commerce & Cloud",
+    "website": "https://www.amazon.in",
+    "logo": "/images/amazon-logo-transparent.png",
+    "description": "Amazon's largest corporate building worldwide, hosting AWS, Alexa, Prime Video, and global operations."
+  },
+  {
+    "id": 18,
+    "name": "Google",
+    "location": "Hyderabad, India",
+    "industry": "Technology & Internet",
+    "website": "https://www.google.com",
+    "logo": "/images/google-logo-transparent.png",
+    "description": "Major engineering and operations hub, supporting Search, Cloud, YouTube, and global technical teams."
+  }
+]
+
