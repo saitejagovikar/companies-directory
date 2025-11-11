@@ -20,8 +20,6 @@ function CompanyCard({ company }) {
   const [imgIdx, setImgIdx] = useState(0);
   const imageSrc = candidates[imgIdx] || '/logo192.png';
 
-  // Gradient-related code has been removed as it wasn't being used
-
   return (
     <div className="relative flex flex-col rounded-2xl overflow-hidden h-full bg-gradient-to-br from-blue-50/80 to-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-blue-100/50">
       {/* Logo Section */}
