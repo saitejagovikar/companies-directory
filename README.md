@@ -23,7 +23,7 @@ A modern, responsive web application that showcases a directory of companies wit
 - **Deployment**: Vercel
 
 🏗️ Project Structure
-
+```bash
 src/
 ├── components/     # Reusable React components
 │   ├── CompanyCard.jsx
@@ -34,7 +34,7 @@ src/
 │   └── companies.json
 ├── App.js         # Main application component
 └── main.jsx       # Application entry point
-
+```
 
 ## 📦 Getting Started
 
