@@ -13,7 +13,7 @@ const Footer = () => {
       'tata consultancy services': '/images/Tata_Consultancy_Services_old_logo.png',
       'infosys': '/images/Infosys_logo.png',
       'wipro': '/images/Wipro_new_logo.png',
-      'hindustan unilever': '/images/hindustan-uniliver-limited-logo-png_seeklogo-304694.png',
+      'hindustan unilever': '/images/HINDUNILVR.NS_BIG-24495890.png',
       'itc': '/images/ITC_Limited-Logo.wine.svg',
       'marico': '/images/Marico.png',
       'microsoft': '/images/Microsoft_logo_(2012).png',
