@@ -14,7 +14,6 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
   'https://companies-directory-ochre.vercel.app',
-  'https://companies-directory-39z3.onrender.com'
 ];
 
 const corsOptions = {
