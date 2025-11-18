@@ -13,8 +13,7 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'https://companies-directory-3rx4vr5vm-saitejas-projects-403022e1.vercel.app',
-  'https://companies-directory-git-master-saitejas-projects-403022e1.vercel.app'
+  'https://companies-directory-ochre.vercel.app'
 ];
 
 const corsOptions = {
