@@ -13,18 +13,26 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'https://companies-directory-ochre.vercel.app/' // Add your Vercel URL here after deployment
+  'https://companies-directory-3rx4vr5vm-saitejas-projects-403022e1.vercel.app',
+  'https://companies-directory-git-master-saitejas-projects-403022e1.vercel.app'
 ];
 
 const corsOptions = {
   origin: function (origin, callback) {
+    console.log('Origin:', origin);
+    console.log('Allowed origins:', allowedOrigins);
     // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
+    if (!origin) {
+      console.log('No origin, allowing request');
+      return callback(null, true);
     }
-    return callback(null, true);
+    if (allowedOrigins.some(allowedOrigin => origin.startsWith(allowedOrigin))) {
+      console.log('Origin allowed:', origin);
+      return callback(null, true);
+    }
+    console.log('Origin not allowed:', origin);
+    const msg = `The CORS policy for this site does not allow access from the specified Origin: ${origin}`;
+    return callback(new Error(msg), false);
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
@@ -48,17 +56,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve static files from the React app in production
 if (process.env.NODE_ENV === 'production') {
-  const path = require('path');
-  // Serve any static files from the React app
-  app.use(express.static(path.join(__dirname, '../frontend/build')));
+  const frontendBuildPath = path.join(__dirname, '../frontend/build');
   
-  // Handle React routing, return all requests to React app
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
-  });
+  // Only serve static files if the build directory exists
+  try {
+    if (require('fs').existsSync(frontendBuildPath)) {
+      app.use(express.static(frontendBuildPath));
+      
+      // Handle React routing, return all requests to React app
+      app.get('*', (req, res) => {
+        res.sendFile(path.join(frontendBuildPath, 'index.html'));
+      });
+      console.log('Serving static files from frontend build');
+    } else {
+      console.log('Frontend build not found. Running in API-only mode.');
+    }
+  } catch (err) {
+    console.error('Error serving static files:', err);
+  }
 } else {
   // In development, serve static files from the backend's public directory
   app.use(express.static('public'));
+  console.log('Running in development mode, serving static files from /public');
 }
 
 // Routes
