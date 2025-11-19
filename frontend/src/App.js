@@ -6,7 +6,8 @@ import Hero from './components/Hero';
 import SkeletonCard from './components/SkeletonCard';
 import Footer from './components/Footer';
 
-const API_URL = `${process.env.REACT_APP_API_URL}/api/companies`;
+const API_URL = `${process.env.REACT_APP_API_URL || 'http://localhost:5003'}/api/companies`;
+
 
 
 const PAGE_SIZE_OPTIONS = [6, 9, 12];
