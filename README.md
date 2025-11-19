@@ -4,7 +4,7 @@ A modern, responsive web application that showcases a directory of companies wit
 
 ## 🚀 Live Demo
 
-[View Live Demo](companies-directory-nu.vercel.app)
+[View Live Demo]([companies-directory-nu.vercel.app](https://companies-directory-ochre.vercel.app/))
 
 ## ✨ Features
 
