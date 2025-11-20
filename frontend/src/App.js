@@ -5,8 +5,7 @@ import CompanyCard from './components/CompanyCard';
 import Hero from './components/Hero';
 import SkeletonCard from './components/SkeletonCard';
 import Footer from './components/Footer';
-
-const API_URL = 'https://companies-directory-39z3.onrender.com/api/companies';
+import { API_URL } from './config';
 
 const PAGE_SIZE_OPTIONS = [6, 9, 12];
 
