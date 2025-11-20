@@ -17,6 +17,8 @@ function Filters({
   return (
     <div className="filters">
       <div className="filters-row">
+        
+        {/* Location Filter */}
         <div className="field">
           <label htmlFor="location">Location</label>
           <select
@@ -25,11 +27,15 @@ function Filters({
             onChange={(e) => onLocationChange(e.target.value)}
           >
             <option value="all">All</option>
-            {locations.map(([key, value]) => (
-              <option key={key} value={value}>{key}</option>
+            {locations.map((loc) => (
+              <option key={loc} value={loc}>
+                {loc}
+              </option>
             ))}
           </select>
         </div>
+
+        {/* Industry Filter */}
         <div className="field">
           <label htmlFor="industry">Industry</label>
           <select
@@ -38,11 +44,15 @@ function Filters({
             onChange={(e) => onIndustryChange(e.target.value)}
           >
             <option value="all">All</option>
-            {industries.map(([key, value]) => (
-              <option key={key} value={value}>{key}</option>
+            {industries.map((ind) => (
+              <option key={ind} value={ind}>
+                {ind}
+              </option>
             ))}
           </select>
         </div>
+
+        {/* Sort Filter */}
         <div className="field">
           <label htmlFor="sort">Sort</label>
           <select
@@ -54,6 +64,8 @@ function Filters({
             <option value="name_desc">Name (Z → A)</option>
           </select>
         </div>
+
+        {/* Page size */}
         <div className="field">
           <label htmlFor="pagesize">Page size</label>
           <select
@@ -61,18 +73,24 @@ function Filters({
             value={pageSize}
             onChange={(e) => onPageSizeChange(Number(e.target.value))}
           >
-            {pageSizeOptions.map(size => (
-              <option key={size} value={size}>{size}</option>
+            {pageSizeOptions.map((size) => (
+              <option key={size} value={size}>
+                {size}
+              </option>
             ))}
           </select>
         </div>
+
       </div>
+
+      {/* Results Count */}
       <div className="filters-meta">
-        <span>{resultsCount} result{resultsCount === 1 ? '' : 's'}</span>
+        <span>
+          {resultsCount} result{resultsCount === 1 ? '' : 's'}
+        </span>
       </div>
     </div>
   );
 }
 
 export default Filters;
-
