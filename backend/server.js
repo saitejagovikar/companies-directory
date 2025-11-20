@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
-const path = require('path');
 const companiesRouter = require('./routes/companies');
 
 // Initialize Express app
@@ -17,8 +16,8 @@ const isProduction = NODE_ENV === 'production';
 // Allowed frontend domains
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://companies-directory-ochre.vercel.app',
-  'https://companies-directory-39z3.onrender.com'
+  'https://companies-directory-ochre.vercel.app',   // Frontend Vercel
+  'https://companies-directory-39z3.onrender.com'  // Backend Render
 ];
 
 // Middleware
@@ -30,17 +29,17 @@ app.use(morgan(isProduction ? 'combined' : 'dev'));
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps or curl requests)
+      // Allow requests with no origin (mobile apps, curl, etc)
       if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-      const msg = 'The CORS policy for this site does not allow access from the specified origin.';
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+
+      const msg =
+        'The CORS policy for this site does not allow access from the specified origin.';
       return callback(new Error(msg), false);
     },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
@@ -52,31 +51,21 @@ app.get('/health', (req, res) => {
   res.status(200).json({
     status: 'ok',
     environment: NODE_ENV,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 });
 
-// Serve static files in production
-if (isProduction) {
-  app.use(express.static(path.join(__dirname, '../frontend/build')));
-  
-  // Handle React routing, return all requests to React app
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
-  });
-} else {
-  // Basic route for development
-  app.get('/', (req, res) => {
-    res.send('API is running in development mode');
-  });
-}
+// Base route (REMOVE React serving – backend only)
+app.get('/', (req, res) => {
+  res.send('Backend API is running');
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error('Error:', err.message);
   res.status(500).json({
     error: 'Something went wrong!',
-    message: process.env.NODE_ENV === 'development' ? err.message : undefined
+    message: NODE_ENV === 'development' ? err.message : undefined,
   });
 });
 
