@@ -13,11 +13,12 @@ const PORT = process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const isProduction = NODE_ENV === 'production';
 
-// Allowed frontend domains
+// Allowed frontend domains (including ALL Vercel preview URLs)
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://companies-directory-ochre.vercel.app',   // Frontend Vercel
-  'https://companies-directory-39z3.onrender.com'  // Backend Render
+  'https://companies-directory-ochre.vercel.app',   // Main Vercel frontend
+  'https://companies-directory-39z3.onrender.com',  // Backend
+  /^https:\/\/.*\.vercel\.app$/                     // Allow all Vercel preview URLs
 ];
 
 // Middleware
@@ -29,12 +30,15 @@ app.use(morgan(isProduction ? 'combined' : 'dev'));
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (mobile apps, curl, etc)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) return callback(null, true);
+      if (!origin) return callback(null, true); // allow no-origin requests
 
-      const msg =
-        'The CORS policy for this site does not allow access from the specified origin.';
+      const isAllowed = allowedOrigins.some((allowed) =>
+        allowed instanceof RegExp ? allowed.test(origin) : allowed === origin
+      );
+
+      if (isAllowed) return callback(null, true);
+
+      const msg = 'The CORS policy for this site does not allow access from the specified origin.';
       return callback(new Error(msg), false);
     },
     credentials: true,
@@ -55,7 +59,7 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Base route (REMOVE React serving – backend only)
+// Base route
 app.get('/', (req, res) => {
   res.send('Backend API is running');
 });
